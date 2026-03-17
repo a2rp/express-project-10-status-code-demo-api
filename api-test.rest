@@ -1,0 +1,26 @@
+### Home Route
+GET http://localhost:1198
+
+
+### 200 OK
+GET http://localhost:1198/status/200
+
+
+### 201 Created
+GET http://localhost:1198/status/201
+
+
+### 400 Bad Request
+GET http://localhost:1198/status/400
+
+
+### 401 Unauthorized
+GET http://localhost:1198/status/401
+
+
+### 404 Not Found
+GET http://localhost:1198/status/404
+
+
+### 500 Internal Server Error
+GET http://localhost:1198/status/500
