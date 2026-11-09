@@ -7,7 +7,7 @@ GET http://localhost:1198/status/200
 
 
 ### 201 Created
-GET http://localhost:1198/status/201
+POST http://localhost:1198/status/201
 
 
 ### 400 Bad Request

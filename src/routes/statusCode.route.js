@@ -20,7 +20,7 @@ const {
 router.get("/status/200", getOkStatus);
 
 // 201 Created
-router.get("/status/201", getCreatedStatus);
+router.post("/status/201", getCreatedStatus);
 
 // 400 Bad Request
 router.get("/status/400", getBadRequestStatus);

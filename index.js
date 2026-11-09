@@ -25,6 +25,14 @@ app.get("/", (req, res) => {
 // Use status code routes
 app.use("/", statusCodeRoutes);
 
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        statusCode: 404,
+        message: "Route not found",
+    });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

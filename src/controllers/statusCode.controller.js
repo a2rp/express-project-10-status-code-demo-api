@@ -31,6 +31,7 @@ const getBadRequestStatus = (req, res) => {
 
 const getUnauthorizedStatus = (req, res) => {
     // 401 means the user is not authenticated
+    res.set("WWW-Authenticate", 'Basic realm="status-code-demo"');
     res.status(401).json({
         success: false,
         statusCode: 401,

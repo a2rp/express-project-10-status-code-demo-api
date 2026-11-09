@@ -1,140 +1,81 @@
 # express-project-10-status-code-demo-api
 
-A simple Express.js backend project that demonstrates different HTTP status codes with clear examples.
+A learning API for observing common HTTP status codes in Express.js. The status endpoints return fixed examples; they do not authenticate users, create persistent records, or perform real data operations.
 
-## Project Goal
+## Requirements and setup
 
-This project helps in understanding how HTTP status codes work in real APIs.
-
-It focuses on:
-
-- returning proper HTTP status codes
-- structuring backend with controllers and routes
-- building a clean Express.js API
-- testing APIs using REST Client
-
-## Tech Stack
-
-- Node.js
-- Express.js
-- Nodemon
-
-## Project Structure
-
-```
-express-project-10-status-code-demo-api
-│
-├─ src
-│  ├─ controllers
-│  │  └─ statusCode.controller.js
-│  │
-│  └─ routes
-│     └─ statusCode.route.js
-│
-├─ index.js
-├─ api-test.rest
-├─ .gitignore
-├─ package.json
-└─ README.md
-```
-
-## Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/a2rp/express-project-10-status-code-demo-api.git
-cd express-project-10-status-code-demo-api
-```
-
-Install dependencies
+Use Node.js 18 or later. Install dependencies:
 
 ```bash
 npm install
 ```
 
-## Run the Project
-
-Development mode (with nodemon)
+Run with automatic restarts during development:
 
 ```bash
 npm run dev
 ```
 
-Production mode
+Or start normally:
 
 ```bash
 npm start
 ```
 
-Server runs at:
+The API listens at `http://localhost:1198`. Requests are in [`api-test.rest`](./api-test.rest) for the VS Code REST Client.
 
-```
-http://localhost:1198
-```
+## Endpoints
 
-## API Endpoints
+| Method | Path | Status | Demonstrates |
+| --- | --- | --- | --- |
+| `GET` | `/` | 200 | Successful request |
+| `GET` | `/status/200` | 200 | Successful response |
+| `POST` | `/status/201` | 201 | Created response |
+| `GET` | `/status/400` | 400 | Bad request response |
+| `GET` | `/status/401` | 401 | Authentication challenge response |
+| `GET` | `/status/404` | 404 | Not found response |
+| `GET` | `/status/500` | 500 | Internal server error response |
 
-### Home
+The `401` example includes a `WWW-Authenticate` header. Unknown paths return a JSON `404` response.
 
-```
-GET /
-```
-
-### Status Code Examples
-
-```
-GET /status/200
-GET /status/201
-GET /status/400
-GET /status/401
-GET /status/404
-GET /status/500
-```
-
-## Example Response
+### Example: `POST /status/201`
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "OK - Request completed successfully"
+  "success": true,
+  "statusCode": 201,
+  "message": "Created - New resource created successfully"
 }
 ```
 
-## Learning Outcome
+Each endpoint deliberately returns its example status. Use the routes to inspect the HTTP response code and JSON body in a REST client.
 
-By building this project, you learn:
+## Project structure
 
-- what HTTP status codes mean
-- when to use different status codes
-- how to structure Express backend
-- how to separate routes and controllers
-- how to test APIs
+```text
+express-project-10-status-code-demo-api/
+├── src/
+│   ├── controllers/
+│   │   └── statusCode.controller.js
+│   └── routes/
+│       └── statusCode.route.js
+├── .gitignore
+├── api-test.rest
+├── index.js
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-## Author
-
-Ashish Ranjan
-
-Follow me
+## Author and links
 
 - GitHub: https://github.com/a2rp
 - Portfolio: https://www.ashishranjan.net
 - LinkedIn: https://www.linkedin.com/in/aashishranjan
 - Facebook: https://www.facebook.com/theash.ashish/
-
-## Links
-
-- Portfolio: [https://www.ashishranjan.net](https://www.ashishranjan.net)
-- GitHub: [https://github.com/a2rp](https://github.com/a2rp)
-- CodePen: [https://codepen.io/ash1198](https://codepen.io/ash1198)
-- LinkedIn: [https://www.linkedin.com/in/aashishranjan](https://www.linkedin.com/in/aashishranjan)
-- Facebook: [https://www.facebook.com/theash.ashish/](https://www.facebook.com/theash.ashish/)
-- YouTube: [https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1](https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1)
-- Email: [ash.ranjan09@gmail.com](mailto:ash.ranjan09@gmail.com)
-
-## Support
-
-- Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
-- Buy Me A Coffee: [https://buymeacoffee.com/a2rp](https://buymeacoffee.com/a2rp)
-- Patreon: [https://patreon.com/a2rp](https://patreon.com/a2rp)
+- CodePen: https://codepen.io/ash1198
+- YouTube: https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1
+- Email: ash.ranjan09@gmail.com
+- Support: https://a2rp-donation-page.netlify.app/
+- Buy Me a Coffee: https://buymeacoffee.com/ashishranjan
+- Patreon: https://patreon.com/ashishranjan

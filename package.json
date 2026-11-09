@@ -1,7 +1,7 @@
 {
     "name": "express-project-10-status-code-demo-api",
     "version": "1.0.0",
-    "description": "",
+    "description": "An Express.js API demonstrating common HTTP status codes with method-aware JSON examples.",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
@@ -11,8 +11,17 @@
         "type": "git",
         "url": "git+https://github.com/a2rp/express-project-10-status-code-demo-api.git"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "express",
+        "expressjs",
+        "nodejs",
+        "rest-api",
+        "http-status-codes",
+        "status-code-examples",
+        "api-responses",
+        "beginner-project"
+    ],
+    "author": "Ashish Ranjan",
     "license": "ISC",
     "type": "commonjs",
     "bugs": {
