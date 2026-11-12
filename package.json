@@ -1,5 +1,6 @@
 {
     "name": "express-project-10-status-code-demo-api",
+    "private": true,
     "version": "1.0.0",
     "description": "An Express.js API demonstrating common HTTP status codes with method-aware JSON examples.",
     "main": "index.js",
